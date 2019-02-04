@@ -1,4 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Brush+Script|Open+Sans');
+*
+::before
+::after {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+html {
+    height: 100vh;
+    overflow: hidden;
+}
+body {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    min-width: 100%;
+    min-height: 100%;
+    background-image: url(assets/img/background.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+    background-size: cover;
+    overflow: hidden;
+}
 
-font-family: 'Open Sans', sans-serif;
+h1, h2, h3, li {
+    color: black;
+    font-size: 4rem;
+    font-family: 'Nanum Brush Script', cursive;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
+    position: relative;
+    z-index: 3;
+}
+p, span, a {
+    color: black;
+    font-size:2rem;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
+    position: relative;
+    z-index: 3;
+}
 
-font-family: 'Nanum Brush Script', cursive;
+#sailboat {
+    position: absolute;
+    left: 60%;
+    top: 55%;
+    height: 60vh;
+    width: 60vw;
+    transform: rotate(4deg) translateY(8px);
+    animation: rock 3s ease-in-out 3s infinite alternate;
+    overflow: hidden;
+    margin: none;
+}
+.sailboat path {
+    width: auto;
+    stroke: #000;
+    stroke-width: .2px;
+    fill: none;
+
+    stroke-dasharray: 12774;
+    stroke-dashoffset: 12774;
+    animation: draw 21s ease-in forwards;
+    overflow: hidden;S
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes rock {
+    to {
+        transform: rotate(-5deg) translateY(-10px);
+    }
+}
