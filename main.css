@@ -67,7 +67,7 @@ p, span, a {
     fill: none;
     stroke-dasharray: 316;
     stroke-dashoffset: 316;
-    animation: draw 2s ease-in 1s forwards, fill 5s linear 2s forwards;
+    animation: draw 3s ease-in 8s forwards, fill 5s linear 2s forwards;
     overflow: hidden;
 }
 .waves {
