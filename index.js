@@ -31,7 +31,7 @@ function handlePage() {
 
 // find path length of svg
 function findPathLength() {
-  let path = document.querySelector(".sailboat path");
+  let path = document.querySelector(".sun path");
   let total_length = path.getTotalLength();
   return Math.round(total_length);
   

@@ -13,8 +13,10 @@ body {
     z-index: 1;
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    align-content: center;
+    justify-content: center;
+    align-content: space-around;
     min-width: 100%;
     min-height: 100%;
     background-image: url(assets/img/background.jpg);
@@ -22,6 +24,7 @@ body {
     background-blend-mode: soft-light;
     background-size: cover;
     overflow: hidden;
+    text-align: center;
 }
 
 h1, h2, h3, li {
@@ -36,21 +39,66 @@ p, span, a {
     color: black;
     font-size:2rem;
     font-family: 'Open Sans', sans-serif;
-    text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .7);
     position: relative;
     z-index: 3;
+}
+.nav {
+    z-index: 3;
+    /* position: relative; */
+}
+.nav li {
+    font-size: 5rem;
+    margin-right: 10px;
+}
+
+#volcano {
+    position: absolute;
+    left: 15%;
+    top: 60%;
+    height: 10vh;
+    width: 10vw;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .7));
+}
+.volcano path {
+    width: auto;
+    stroke: #000;
+    stroke-width: .5px;
+    fill: none;
+    stroke-dasharray: 316;
+    stroke-dashoffset: 316;
+    animation: draw 2s ease-in 1s forwards, fill 5s linear 2s forwards;
+    overflow: hidden;
+}
+.waves {
+    position: absolute;
+    bottom: -2vh;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .7));
+    animation: pulse 50s ease-in-out infinite alternate;
+}
+#waves path {
+    width: auto;
+    stroke: #000;
+    stroke-width: .2px;
+    fill: #000;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 30;
+    animation: draw 6s ease-in infinite alternate-reverse;
+    overflow: hidden;
 }
 
 #sailboat {
     position: absolute;
     left: 60%;
-    top: 55%;
+    top: 60%;
     height: 60vh;
     width: 60vw;
     transform: rotate(4deg) translateY(8px);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .7));
     animation: rock 3s ease-in-out 3s infinite alternate;
     overflow: hidden;
     margin: none;
+    z-index: 2;
 }
 .sailboat path {
     width: auto;
@@ -61,8 +109,122 @@ p, span, a {
     stroke-dasharray: 12774;
     stroke-dashoffset: 12774;
     animation: draw 21s ease-in forwards;
-    overflow: hidden;S
+    overflow: hidden;
 }
+#sun {
+    position: absolute;
+    left: 75%;
+    top: 8%;
+    height: 18vh;
+    width: 18vw;
+    transform: rotate(8deg) translateY(8px);
+    overflow: hidden;
+    margin: none;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .7));
+    animation: pulse 30s ease-in-out infinite alternate;
+}
+.sun path {
+    width: auto;
+    stroke: #000;
+    stroke-width: .3px;
+    fill: none;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 8s ease-in-out 2s forwards;
+    overflow: hidden;
+}
+.cloud {
+    position: absolute;
+    left: 110%;
+    top: 24%;
+    height: 15vh;
+    width: 15vw;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .7));
+    animation: fly-left-1 linear infinite;
+    overflow: hidden;
+    z-index: 0;
+}
+.cloud--1 {
+    transform: rotate(-30deg);
+    animation-duration: 15s;
+    animation-delay: 0;
+}
+.cloud--2 {
+    top: 21%;
+    transform: scale(1.3);
+    animation-duration: 16s;
+    animation-delay: 7s;
+}
+.cloud--3 {
+    top: 25%;
+    animation-duration: 14.6s;
+    animation-delay: 4s;
+}
+.cloud--4 {
+    top: 30%;
+    transform: scale(1.1);
+    animation-duration: 16s;
+    animation-delay: 10.25s;
+}
+
+#cloud--1 path {
+    width: auto;
+    stroke: #000;
+    stroke-width: .8px;
+    fill: none;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 30;
+    animation: draw 3s ease-in-out infinite alternate-reverse;
+    overflow: hidden;
+}
+#cloud--2 path {
+    width: auto;
+    stroke: #000;
+    stroke-width: .8px;
+    fill: none;
+    stroke-dasharray: 40;
+    stroke-dashoffset: 40;
+    animation: draw 3s ease-in-out 2s infinite alternate-reverse;
+    overflow: hidden;
+}
+
+
+@keyframes fly-left-1 {
+    0% {
+      -webkit-transform: scale(0.3) translateX(-10vw);
+              transform: scale(0.3) translateX(-10vw);
+    }
+    10% {
+      -webkit-transform: translateY(2vh) translateX(-10vw) scale(0.4);
+              transform: translateY(2vh) translateX(-10vw) scale(0.4);
+    }
+    20% {
+      -webkit-transform: translateY(0vh) translateX(-30vw) scale(0.5);
+              transform: translateY(0vh) translateX(-30vw) scale(0.5);
+    }
+    30% {
+      -webkit-transform: translateY(-1vh) translateX(-50vw) scale(0.6);
+              transform: translateY(-1vh) translateX(-50vw) scale(0.6);
+    }
+    40% {
+      -webkit-transform: translateY(0vh) translateX(-70vw) scale(0.6);
+              transform: translateY(0vh) translateX(-70vw) scale(0.6);
+    }
+    50% {
+      -webkit-transform: translateY(2vh) translateX(-90vw) scale(0.6);
+              transform: translateY(2vh) translateX(-90vw) scale(0.6);
+    }
+    60% {
+      -webkit-transform: translateY(0vh) translateX(-110vw) scale(0.6);
+              transform: translateY(0vh) translateX(-110vw) scale(0.6);
+    }
+    100% {
+      -webkit-transform: translateY(-2vh) translateX(-160vw) scale(0.6);
+              transform: translateY(-2vh) translateX(-160vw) scale(0.6);
+    }
+  }
+
+
 
 @keyframes draw {
     to {
@@ -73,5 +235,15 @@ p, span, a {
 @keyframes rock {
     to {
         transform: rotate(-5deg) translateY(-10px);
+    }
+}
+@keyframes fill {
+    to {
+        fill: rgba(0, 0, 0, 0.6);
+    }
+}
+@keyframes pulse {
+    to {
+        transform: rotate(8deg) scale(1.17);
     }
 }
