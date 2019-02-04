@@ -56,8 +56,8 @@ p, span, a {
     position: absolute;
     left: 15%;
     top: 60%;
-    height: 10vh;
-    width: 10vw;
+    height: 12vh;
+    width: 12vw;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .7));
 }
 .volcano path {
@@ -67,7 +67,7 @@ p, span, a {
     fill: none;
     stroke-dasharray: 316;
     stroke-dashoffset: 316;
-    animation: draw 3s ease-in 8s forwards, fill 5s linear 2s forwards;
+    animation: draw 8s ease-in 10s forwards, fill 5s linear 15s forwards;
     overflow: hidden;
 }
 .waves {
@@ -238,7 +238,25 @@ p, span, a {
     }
 }
 @keyframes fill {
-    to {
+    0% {
+        fill: rgba(0, 0, 0, 0.0);
+    }
+    15% {
+        fill: rgba(0, 0, 0, 0.1);
+    }
+    30% {
+        fill: rgba(0, 0, 0, 0.2);
+    }
+    45% {
+        fill: rgba(0, 0, 0, 0.3);
+    }
+    60% {
+        fill: rgba(0, 0, 0, 0.4);
+    }
+    75% {
+        fill: rgba(0, 0, 0, 0.5);
+    }
+    100% {
         fill: rgba(0, 0, 0, 0.6);
     }
 }
