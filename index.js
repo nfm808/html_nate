@@ -1,35 +1,39 @@
 'use strict'
 
-// retrieves the svg strings to be added to DOM
-function getElement(string) {
+// retrieves the html to be added to DOM
+function getHtml() {
   //   console.log(svg[0]["sailboat"]);
 };
 // adds the element to DOM
-function addElement() {
-  getElement('sailboat')
-};
-//play audio
-function playAudio() {
-  $('#js_play').get(0).play();
-};
-//handle sun clicks
-function clickElement() {
-  $('#js_play').get(0).load();
-  playAudio();
-};
-//event listener for svg click
-function clickSVG() {
-  $('#sun').addEventListener('click', clickElement);
-};
-// determine what page site is on
-// function determineButton() {
-//   let page = ;
+// function addElement() {
+//   getElement('.sailboat')
 // };
+//transition out elements
+function transitionOut() {
+  let speed = 200
+  $('#sailboat', '#volcano').animate('left: 140%vw',speed)
+};
+
+//button click
+function buttonClick() {
+  $('button').click(function() {
+    return (this.id);
+  });
+};
+// svg click
+function svgClick() {
+  let audio = new Audio('assets/audio/exp.mp3')
+  $('.sun, #sun').click(function() {
+    audio.play();
+    console.log(audio);
+  });
+};
 function handlePage() {
   // checkString();
-  addElement();
+  buttonClick();
+  svgClick();
+  // addElement();
   findPathLength();
-  clickElement();
   console.log(findPathLength());
 };
 
