@@ -8,25 +8,29 @@ function getElement(string) {
 function addElement() {
   getElement('sailboat')
 };
-// determine what page site is on
-function determinePage() {
-  return $("html").data("page");
+//play audio
+function playAudio() {
+  $('#js_play').get(0).play();
 };
-// get elements from DATA array
-function getElementsFromData() {
-  let locale = determinePage();
-  let pageElements = DATA.filter(function (where) {
-    return where.page == locale;
-  });
-  return pageElements;
-}
+//handle sun clicks
+function clickElement() {
+  $('#js_play').get(0).load();
+  playAudio();
+};
+//event listener for svg click
+function clickSVG() {
+  $('#sun').addEventListener('click', clickElement);
+};
+// determine what page site is on
+// function determineButton() {
+//   let page = ;
+// };
 function handlePage() {
   // checkString();
   addElement();
-  getElementsFromData();
   findPathLength();
+  clickElement();
   console.log(findPathLength());
-  console.log(getElementsFromData());
 };
 
 // find path length of svg
