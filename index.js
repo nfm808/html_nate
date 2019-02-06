@@ -22,7 +22,7 @@ function buttonClick() {
 };
 // svg click
 function svgClick() {
-  let audio = new Audio('assets/audio/exp.mp3')
+  let audio = new Audio('assets/audio/exp1.mp3')
   $('.sun, #sun').click(function() {
     audio.play();
     console.log(audio);
