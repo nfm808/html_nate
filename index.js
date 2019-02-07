@@ -72,7 +72,7 @@ function audioClick() {
 function handlePage() {
   welcomeAnimation();
   buttonClick();
-  svgClick();
+  audioClick();
   navGrow();
   findPathLength();
   // addElement();
