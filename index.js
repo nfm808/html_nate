@@ -1,12 +1,36 @@
 'use strict'
+//button click listener
+function buttonClick() {
+  let current = $('body').data("id");
+  let target = "";
+  let index = $('button').data("num");
+  $('.navbutton').click(function() {
+    target = (this.id);
+    fadeOut(current);
+    fontGrow(target);
+    navFadeOut();
+    removeDOM(current);
+    changeDomValue(target);
+    console.log($('body').data("id"))
+    current = target;
+    createNewPage(target, index);
+  });
+};
 
 //transition new DOM elements
 function createNewPage(string, num) {
   console.log(`createNewPage() ran`);
   let svg = DATA[`${num}`][`${string}`][1];
   let nav = DATA[`${num}`][`${string}`][0];
-  
 
+};
+//change DOM data
+function changeDomValue(string) {
+  $('body').data("id", `${string}`);
+};
+//remove elements from DOM
+function removeDOM(string) {
+  $(`.${string}`).remove();
 };
 //welcome message animation
 function welcomeAnimation() {
@@ -36,11 +60,11 @@ function navGrow() {
 }
 //nav fade out transition
 function navFadeOut() {
-  $(`#nav`).animate({opacity: 0}, 1100);
+  $(`#nav`).animate({opacity: 0}, 1000);
 };
 //font size increase
 function fontGrow(string) {
-    $(`#${string}`).animate({fontSize: "5.6rem"}, 800);
+    $(`#${string}`).animate({fontSize: "5.5rem"}, 800);
     $(`#${string}`).animate({fontSize: "5rem"}, 1);
 };
 
@@ -48,24 +72,10 @@ function fontGrow(string) {
 function fadeOut(string) {
   $(`.${string}`).animate({opacity: 0}, 700);
 };
-//button click listener
-function buttonClick() {
-  let current = $('body').data("id");
-  let target = "";
-  let index = 2;
-  $('.navbutton').click(function() {
-    target = (this.id);
-    fadeOut(current);
-    fontGrow(target);
-    navFadeOut();
-    current = target;
-    createNewPage(target, index);
-  });
-};
 // svg click for audio
 function audioClick() {
   let audio = new Audio('assets/audio/sailboat.mp3')
-  $('.sun, #sun, #speaker').click(function() {
+  $('.sun, #sun').click(function() {
     audio.play();
   });
 };

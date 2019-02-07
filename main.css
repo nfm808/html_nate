@@ -140,19 +140,6 @@ button {
     animation: fill 20s ease-in forwards;
     overflow: hidden;
 }
-#speaker {
-    /* position: relative; */
-    height: 70%;
-    width: 70%;
-    background-image: url(assets/img/sound.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    opacity: .8;
-    /* top: 11%; */
-    /* left: 78%; */
-    cursor: pointer;
-}
 #sun {
     position: absolute;
     left: 75%;
@@ -179,8 +166,8 @@ button {
     position: absolute;
     left: 110%;
     top: 24%;
-    height: 15vh;
-    width: 15vw;
+    height: 16vh;
+    width: 16vw;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .7));
     animation: fly-left-1 linear infinite;
     overflow: hidden;
