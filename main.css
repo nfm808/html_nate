@@ -29,12 +29,15 @@ body {
 
 h1, h2, h3, li, a {
     color: black;
-    font-size: 4rem;
+    font-size: 0rem;
     font-family: 'Nanum Brush Script', cursive;
     text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
     position: relative;
     z-index: 3;
     text-decoration: none;
+}
+li {
+    font-size: 0rem;
 }
 p, span {
     color: black;
@@ -45,13 +48,20 @@ p, span {
     z-index: 3;
     text-decoration: none;
 }
-.nav {
+#nav {
     z-index: 3;
-}
-.nav li, a {
-    font-size: 5rem;
-    margin-right: 10px;
+    overflow: hidden;
     opacity: 1;
+}
+#nav li, a {
+    margin-right: 15px;
+    opacity: 1;
+}
+title {
+    display: none;
+}
+.welcome {
+    padding: 10px;
 }
 svg {
     opacity: 1;
@@ -130,13 +140,26 @@ button {
     animation: fill 20s ease-in forwards;
     overflow: hidden;
 }
+#speaker {
+    /* position: relative; */
+    height: 70%;
+    width: 70%;
+    background-image: url(assets/img/sound.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    opacity: .8;
+    /* top: 11%; */
+    /* left: 78%; */
+    cursor: pointer;
+}
 #sun {
     position: absolute;
     left: 75%;
     top: 8%;
-    height: 18vh;
-    width: 18vw;
-    transform: rotate(8deg) translateY(8px) scale(1);
+    height: 11vh;
+    width: 11vw;
+    transform: translateY(8px) scale(1);
     overflow: hidden;
     margin: none;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .7));
@@ -144,11 +167,11 @@ button {
 }
 .sun path {
     width: auto;
-    stroke: #000;
-    stroke-width: .3px;
+    stroke: rgba(0, 0, 0, 0.815);
+    stroke-width: 15px;
     fill: none;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
+    stroke-dasharray: 1900;
+    stroke-dashoffset: 1900;
     animation: draw 10s ease-in-out 2s forwards;
     overflow: hidden;
 }
