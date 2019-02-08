@@ -1,26 +1,32 @@
 'use strict'
 //navigation click 
 function navigationClick() {
-  let current = $('body').data("id");
-  let target = "";
-  let index = 0;
-  $('.navbutton').click(function() {
+  let i = 0;
+  $('.navbutton').on("click", function() {
+    i++;
+    let current = $('body').data("id");
+    let target = "";
+    let index = 0;
+    console.log(current, target, index);
+  
     target = (this.id);
     index = $(this).data("num");
-    console.log(target);
-    console.log(index);
+    console.log(current, target, index);
     fontGrow(target);
     navFadeOut();
     removeNavElement();
     removeDOM(current);
     changeDomValue(target);
-    console.log($('body').data("num"))
+    console.log(`changeDOM() ran. expected: '${target}' actual: '${$('body').data("id")}'`);
     current = target;
-    createNewPage(target, index);
-    resetFontSize();
-    fadeInBackground(current);
+    console.log(current, target, index);
+    createNewPage(current, index);
+    // fontGrow(current);
+    // resetFontSize();
+    // fadeInBackground();
 
   });
+  console.log(i);
 };
 
 //transition new DOM elements
@@ -29,18 +35,22 @@ function createNewPage(string, num) {
   let svg = DATA[`${num}`][`${string}`][1];
   let nav = DATA[`${num}`][`${string}`][0];
   let navGen = setTimeout(a, 1000);
-  let bodyGen = setTimeout(b, 900);
+  let bodyGen = setTimeout(b, 1000);
   function a() {
     $('body').append(nav);
+    fadeInBackground();
+    resetFontSize();
+    clearTimeout(navGen);
   };
   function b() {
   $('body').append(svg);
+    clearTimeout(bodyGen)
+    fadeInBackground(string);
   };
 };
 //change DOM data
 function changeDomValue(string) {
   $('body').data("id", `${string}`);
-  console.log($('body').data("id"))
 };
 //remove elements from DOM
 function removeDOM(string) {
@@ -91,11 +101,13 @@ function navFadeOut() {
 function fontGrow(string) {
     $(`#${string}`).animate({fontSize: "5.5rem"}, 800);
     $(`#${string}`).animate({fontSize: "5rem"}, 1);
+    console.log(`fontGrow() ran expected: '5rem', actual: '${$(`${string}`).css("fontSize")}' string: ${string}`);
+
 };
 //reset font size
 function resetFontSize() {
-  $(`#nav`).animate({fontSize: "5rem"}, 1);
-  console.log($('li').css("font-size"));
+  $(`li`).animate({fontSize: "5rem"}, 1);
+  console.log(`resetFontSize() ran expected '5rem' actual: '${$('#nav').css("font-size")}'`);
 };
 //navigation fade in
 function navFadeIn(string) {
@@ -104,12 +116,12 @@ function navFadeIn(string) {
 //fade out background elements
 function fadeOut(string) {
   $(`.${string}`).animate({opacity: 0}, 700);
+  console.log(`fadeOut() ran. expected: '0' actual: '${$(`${string}`).css("opacity")}'`)
 };
 //fade in background elements
 function fadeInBackground(string) {
   $(`.${string}`).animate({opacity: 1}, 7000);
-  console.log(`fadeInBackground ran`);
-  console.log(string);
+  console.log(`fadeInBackground ran expected: '1' actual: '${$('.background').css("opacity")}'`);
 };
 // svg click for audio
 function audioClick() {

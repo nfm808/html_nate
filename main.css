@@ -27,7 +27,7 @@ body {
     text-align: center;
 }
 
-h1, h2, h3, li, a {
+#nav, h1, h2, h3, li, a {
     color: black;
     font-size: 0rem;
     font-family: 'Nanum Brush Script', cursive;
