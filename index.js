@@ -1,19 +1,25 @@
 'use strict'
-//button click listener
-function buttonClick() {
+//navigation click 
+function navigationClick() {
   let current = $('body').data("id");
   let target = "";
-  let index = $('button').data("num");
+  let index = 0;
   $('.navbutton').click(function() {
     target = (this.id);
-    fadeOut(current);
+    index = $(this).data("num");
+    console.log(target);
+    console.log(index);
     fontGrow(target);
     navFadeOut();
+    removeNavElement();
     removeDOM(current);
     changeDomValue(target);
-    console.log($('body').data("id"))
+    console.log($('body').data("num"))
     current = target;
     createNewPage(target, index);
+    resetFontSize();
+    fadeInBackground(current);
+
   });
 };
 
@@ -22,11 +28,19 @@ function createNewPage(string, num) {
   console.log(`createNewPage() ran`);
   let svg = DATA[`${num}`][`${string}`][1];
   let nav = DATA[`${num}`][`${string}`][0];
-
+  let navGen = setTimeout(a, 1000);
+  let bodyGen = setTimeout(b, 900);
+  function a() {
+    $('body').append(nav);
+  };
+  function b() {
+  $('body').append(svg);
+  };
 };
 //change DOM data
 function changeDomValue(string) {
   $('body').data("id", `${string}`);
+  console.log($('body').data("id"))
 };
 //remove elements from DOM
 function removeDOM(string) {
@@ -41,7 +55,7 @@ function welcomeAnimation() {
   };
   let timer2 = setTimeout(f, 10000);
   function f() {
-    $('.welcome').animate({fontSize: "5rem"}, 200);
+    $('.welcome').animate({fontSize: "4.5rem"}, 200);
     clearTimeout(timer2);
     fadeOut('welcome');
     let timer3 = setTimeout(g, 100);
@@ -53,10 +67,21 @@ function welcomeAnimation() {
 };
 //nav grow in transition
 function navGrow() {
-  window.setTimeout(e, 16000)
+  // window.setTimeout(e, 16000)
+  window.setTimeout(e, 100)
   function e() {
-    $(`li`).animate({fontSize: "4rem"}, 1000);
+    $(`button`).animate({fontSize: "4rem"}, 1000);
   };
+  window.clearTimeout(e);
+}
+//remove nav element
+function removeNavElement() {
+  let timer = setTimeout(e, 200);
+  function e() {
+    $(`nav`).remove();
+    clearTimeout(timer);
+  };
+
 }
 //nav fade out transition
 function navFadeOut() {
@@ -67,10 +92,24 @@ function fontGrow(string) {
     $(`#${string}`).animate({fontSize: "5.5rem"}, 800);
     $(`#${string}`).animate({fontSize: "5rem"}, 1);
 };
-
+//reset font size
+function resetFontSize() {
+  $(`#nav`).animate({fontSize: "5rem"}, 1);
+  console.log($('li').css("font-size"));
+};
+//navigation fade in
+function navFadeIn(string) {
+  $(`#nav`).animate({opacity: 1}, 700);  
+}
 //fade out background elements
 function fadeOut(string) {
   $(`.${string}`).animate({opacity: 0}, 700);
+};
+//fade in background elements
+function fadeInBackground(string) {
+  $(`.${string}`).animate({opacity: 1}, 7000);
+  console.log(`fadeInBackground ran`);
+  console.log(string);
 };
 // svg click for audio
 function audioClick() {
@@ -80,11 +119,11 @@ function audioClick() {
   });
 };
 function handlePage() {
-  welcomeAnimation();
-  buttonClick();
+  // welcomeAnimation();
+  navigationClick();
   audioClick();
   navGrow();
-  findPathLength();
+  // findPathLength();
   // addElement();
   // findPathLength(volcano);
 };

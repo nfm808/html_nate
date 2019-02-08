@@ -1,14 +1,14 @@
 'use strict'
 const DATA = [
     {
-        porfolio: [`<nav>
+        portfolio: [`<nav>
        <ul id="nav">
            <li id="a"><button class="navbutton" type="button" data-num="1" id="about">About</button></li>
            <li id="p"><button data-num="3" class="navbutton" id="home" type="button">Home</button></li>
            <li id="c"><button data-num="2" class="navbutton" type="button" id="contact">Contact</button></li>
        </ul> 
     </nav>
-`, ``],
+`, `<p class="portfolio">test</p>`],
     },
     {
         about: [`<nav>
@@ -18,7 +18,7 @@ const DATA = [
            <li id="c"><button data-num="2" class="navbutton" type="button" id="contact">Contact</button></li>
        </ul> 
     </nav>
-`, ``],
+`, `<p class="about">test</p>`],
     },
     {
         contact: [`<nav>
@@ -28,7 +28,7 @@ const DATA = [
            <li id="c"><button data-num="3" class="navbutton" type="button" id="home">Home</button></li>
        </ul> 
     </nav>
-`, ``],
+`, `<p class="contact">test</p>`],
     },
     {
         home: [`<nav>
