@@ -71,6 +71,9 @@ button {
     border: none;
     cursor: pointer;
 }
+.hidden {
+    display: 
+}
 .home {
     opacity: 1;
 }

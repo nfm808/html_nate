@@ -1,8 +1,8 @@
 'use strict'
 //navigation click 
 function navigationClick() {
-  let i = 0;
-  $('.navbutton').on("click", function() {
+  $('.js_home_button').on("click", function() {
+    event.preventDefault();
     i++;
     let current = $('body').data("id");
     let target = "";
@@ -24,9 +24,81 @@ function navigationClick() {
     // fontGrow(current);
     // resetFontSize();
     // fadeInBackground();
-
   });
-  console.log(i);
+  $('.js_about_button').on("click", function() {
+    event.preventDefault();
+    let current = $('body').data("id");
+    let target = "";
+    let index = 0;
+    console.log(current, target, index);
+  
+    target = (this.id);
+    index = $(this).data("num");
+    console.log(current, target, index);
+    fontGrow(target);
+    navFadeOut();
+    removeNavElement();
+    removeDOM(current);
+    changeDomValue(target);
+    console.log(`changeDOM() ran. expected: '${target}' actual: '${$('body').data("id")}'`);
+    current = target;
+    console.log(current, target, index);
+    createNewPage(current, index);
+    // fontGrow(current);
+    // resetFontSize();
+    // fadeInBackground();
+  });
+  $('.js_portfolio_button').on("click", function() {
+    event.preventDefault();
+    let current = $('body').data("id");
+    let target = "";
+    let index = 0;
+    console.log(current, target, index);
+  
+    target = (this.id);
+    index = $(this).data("num");
+    console.log(current, target, index);
+    fontGrow(target);
+    navFadeOut();
+    removeNavElement();
+    removeDOM(current);
+    changeDomValue(target);
+    console.log(`changeDOM() ran. expected: '${target}' actual: '${$('body').data("id")}'`);
+    current = target;
+    console.log(current, target, index);
+    createNewPage(current, index);
+    // fontGrow(current);
+    // resetFontSize();
+    // fadeInBackground();
+  });  
+  $('.js_contact_button').on("click", function() {
+    event.preventDefault();
+    let current = $('body').data("id");
+    let target = "";
+    let index = 0;
+    console.log(current, target, index);
+  
+    target = (this.id);
+    index = $(this).data("num");
+    console.log(current, target, index);
+    fontGrow(target);
+    navFadeOut();
+    removeNavElement();
+    removeDOM(current);
+    changeDomValue(target);
+    console.log(`changeDOM() ran. expected: '${target}' actual: '${$('body').data("id")}'`);
+    current = target;
+    console.log(current, target, index);
+    createNewPage(current, index);
+    // fontGrow(current);
+    // resetFontSize();
+    // fadeInBackground();
+  });
+
+
+
+
+
 };
 
 //transition new DOM elements
