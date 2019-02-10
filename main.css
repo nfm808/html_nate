@@ -179,7 +179,7 @@ button {
 /* end elements styling */
 
 /* top bar styling */
-.name-wrap {
+.top-bar {
     position: fixed;
     top: 1vh;
     width: 100%;

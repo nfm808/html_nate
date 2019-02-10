@@ -36,7 +36,6 @@ function validateForm() {
   let name = $('#name').val();
   let email = $('#email').val();
   let message = $('#message').val();
-  console.log(email);
   if (name === "" || name === "Your Name") {
     $('#name-label').text(`Required`);
     $('#name-label').css({"color": "red", "font-size": "2rem"});
