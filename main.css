@@ -123,8 +123,7 @@ body {
     background-image: url(assets/img/seabed.jpg);
     background-repeat: no-repeat;
     background-blend-mode: soft-light;
-    background-size: cover;
-
+    background-size: contain;
 }
 
 
