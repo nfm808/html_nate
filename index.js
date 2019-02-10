@@ -97,27 +97,32 @@
 // };
 
 //handle button click
-function determineButtonClick() {
-  $('.navbutton').click(function() {
-    console.log(this.id);
-    return `${this.id}-view`;
-  });
-};
 //handle view change
 function handleViewChange() {
-  let container = document.querySelector('.container');
-  let backButton = document.querySelector('.back-button');
-  let buttons = document.querySelectorAll('.navbutton');
-  
-  function onViewChange(evt) {
-    container.classList.toggle('view-change');
-  }
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', onViewChange, false);
-  }
-
-  // And switch it back again when you click the back button
-  backButton.addEventListener('click', onViewChange);
+  // let container = document.querySelector('.container');
+  // let backButton = document.querySelector('.back-button');
+  // let buttons = document.querySelectorAll('.navbutton');
+  // let selectedButton = $('.navbutton');
+  // let targetScreen = '';
+  // console.log(selectedButton);
+  // console.log(targetScreen);
+  // function onViewChange(string) {
+  //   container.classList.toggle(`${string}`);
+  // }
+  // for (var i = 0; i < buttons.length; i++) {
+  //   buttons[i].addEventListener('click', onViewChange, false);
+  // }
+  let button = ''
+    $('.navbutton').click(function() {
+      button = this.id;
+      console.log(button);
+      $('.container').toggleClass(this.id);
+    });
+    $('.back-button').click(function(){
+      $('.container').toggleClass(button);
+    });
+    // And switch it back again when you click the back button
+  // backButton.addEventListener('click', onViewChange(``));
 }
 //transition new DOM elements
 function createNewPage(string, num) {
@@ -224,7 +229,6 @@ function handlePage() {
   // welcomeAnimation();
   // navigationClick();
   handleViewChange();
-  determineButtonClick();
   audioClick();
   navGrow();
   // findPathLength();

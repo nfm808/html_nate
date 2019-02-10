@@ -46,39 +46,87 @@ body {
     justify-content: center;
     align-content: space-around;
     text-align: center;
-    transition: -webkit-transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
-    transition: transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    transition: -webkit-transform .5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    transition: transform .5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
 }
+/* setting to move from right to left */
 .about-view {
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
 }
-.home-view {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-}
-.view-change .home-view {
+.portfolio-view {
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
 }
-.view-change .about-view {
+.home-view {
     -webkit-transform: translateX(0);
     transform: translateX(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+
+}
+.contact-view {
+    -webkit-transfrom: translateY(100%);
+    transform: translateY(100%);
+}
+.view-change-left .home-view {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+.view-change-right .home-view {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+}
+.view-change-up .home-view {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+/* setting to move from right to left */
+.view-change-left .about-view {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+/* moving in from left */
+.view-change-right .portfolio-view {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+} 
+.view-change-up .contact-view {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
 }
 .home-view {
     height: 100%;
     width: 100%;
-    top: 0;
-    left: 0;
-    /* position: absolute; */
     overflow: hidden;
 }
+/* this is the setting to move box from right to left */
 .about-view {
     height: 100%;
     width: 100%;
-    position: absolute;
+    right: 0;
     overflow: hidden;
 }
+/* located to the left */
+.portfolio-view {
+    height: 100%;
+    width: 100%;
+    left: -100%;
+    overflow: hidden;
+}
+.contact-view {
+    height: 100%;
+    width: 100%;
+    bottom: -100%;
+    overflow: hidden;
+    background-image: url(assets/img/seabed.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+    background-size: cover;
+
+}
+
 
 #nav, h1, h2, h3, li, a {
     color: black;
@@ -274,6 +322,39 @@ button {
     animation: draw 3s ease-in-out 2s infinite alternate-reverse;
     overflow: hidden;
 }
+#fish--1 path {
+    width: auto;
+    stroke: #000;
+    stroke-width: 7px;
+    fill: none;
+    stroke-dasharray: 130;
+    stroke-dashoffset: 130;
+    animation: draw 2.5s ease-in-out infinite alternate-reverse;
+    overflow: hidden;
+}
+#fish--2 path {
+    width: auto;
+    stroke: #000;
+    stroke-width: 6px;
+    fill: none;
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    animation: draw 3s ease-in-out 2s infinite alternate-reverse;
+    overflow: hidden;
+}
+#fish--3 path {
+    width: auto;
+    stroke: #000;
+    stroke-width: 2px;
+    fill: none;
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    animation: draw 3s ease-in-out 2s infinite alternate-reverse;
+    overflow: hidden;
+}
+
+
+
 
 
 @keyframes fly-left-1 {
