@@ -4,13 +4,78 @@ function handleViewChange() {
   let button = ''
     $('.navbutton').click(function() {
       button = this.id;
-      console.log(button);
       $('.container').toggleClass(this.id);
     });
     $('.back-button').click(function(){
       $('.container').toggleClass(button);
     });
 }
+//handle keyboard navigation
+function handleKeyboardNav() {
+  console.log(`handleKeyboardNav() ran`);
+};
+//--contact form--
+function handleSubmitForm() {
+  //submit listener
+  $('#submit').click(function(e) {
+    e.preventDefault();
+    
+    //validate the submit form
+    validateForm();
+    console.log(`handleSubmitForm() was a success`)
+
+  });
+};
+//validate the email 
+function validateEmail(email) {
+  let re = /\S+@\S+\.\S+/;
+  return re.test(String(email).toLowerCase());
+};
+//validate form submission
+function validateForm() {
+  let name = $('#name').val();
+  let email = $('#email').val();
+  let message = $('#message').val();
+  console.log(email);
+  if (name === "" || name === "Your Name") {
+    $('#name-label').text(`Required`);
+    $('#name-label').css({"color": "red", "font-size": "2rem"});
+    $('#name').focus();
+    return false;
+  }
+  if (name !== "" || name !== "Your Name") {
+    $('#name-label').text(`Valid`);
+    $('#name-label').css({"color": "green", "font-size": "2rem"});
+  } 
+  if (email === "" || email === "Your Email") {
+    $('#email-label').text(`Valid Email Required`);
+    $('#email-label').css({"color": "red", "font-size": "2rem"});
+    $('#email').focus();
+    return false;
+  }
+  if (validateEmail(email) === false) {
+    $('#email-label').text(`Valid Email Required`);
+    $('#email-label').css({"color": "red", "font-size": "2rem"});
+    $('#email').focus();
+    return false;
+  }
+  if (validateEmail(email) === true) {
+    $('#email-label').text(`Valid`);
+    $('#email-label').css({"color": "green", "font-size": "2rem"});
+  } 
+  if (message == "" || message == "Your Message") {
+    $('#message-label').text(`Required`);
+    $('#message-label').css({"color": "red", "font-size": "2rem"});
+    $('#message').focus();
+  }
+  if (message !== "" || message !== "Your Name") {
+    $('#message-label').text(`Valid`);
+    $('#message-label').css({"color": "green", "font-size": "2rem"});
+  } 
+  return true;
+};
+// --end contact form--
+
 //transition new DOM elements
 function createNewPage(string, num) {
   console.log(`createNewPage() ran`);
@@ -115,6 +180,8 @@ function audioClick() {
 function handlePage() {
   // welcomeAnimation();
   // navigationClick();
+  handleSubmitForm();
+  handleKeyboardNav();
   handleViewChange();
   audioClick();
   navGrow();
