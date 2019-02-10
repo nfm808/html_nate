@@ -46,7 +46,7 @@ function validateForm() {
     $('#name-label').text(`Valid`);
     $('#name-label').css({"color": "green", "font-size": "2rem"});
   } 
-  if (email === "" || email === "Your Email") {
+  if (email == "" || email == "Your Email") {
     $('#email-label').text(`Valid Email Required`);
     $('#email-label').css({"color": "red", "font-size": "2rem"});
     $('#email').focus();
@@ -62,10 +62,11 @@ function validateForm() {
     $('#email-label').text(`Valid`);
     $('#email-label').css({"color": "green", "font-size": "2rem"});
   } 
-  if (message == "" || message == "Your Message") {
+  if (message === "" || message === "Your Message") {
     $('#message-label').text(`Required`);
     $('#message-label').css({"color": "red", "font-size": "2rem"});
     $('#message').focus();
+    return false;
   }
   if (message !== "" || message !== "Your Name") {
     $('#message-label').text(`Valid`);
