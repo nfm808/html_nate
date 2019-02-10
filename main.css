@@ -26,6 +26,7 @@ body {
     /* overflow: hidden; */
     /* text-align: center; */
 }
+/* containers for screen movement */
 .container {
     width: 100%;
     min-height: 100%;
@@ -49,7 +50,7 @@ body {
     transition: -webkit-transform .5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
     transition: transform .5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
 }
-/* setting to move from right to left */
+/* setting initial positions to move from right to left */
 .about-view {
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
@@ -63,12 +64,12 @@ body {
     transform: translateX(0);
     -webkit-transform: translateY(0);
     transform: translateY(0);
-
 }
 .contact-view {
     -webkit-transfrom: translateY(100%);
     transform: translateY(100%);
 }
+/* home view movements */
 .view-change-left .home-view {
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
@@ -92,29 +93,32 @@ body {
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
 } 
+/* move up from bottom */
 .view-change-up .contact-view {
     -webkit-transform: translateY(0);
     transform: translateY(0);
 }
+/* located center screen */
 .home-view {
     height: 100%;
     width: 100%;
     overflow: hidden;
 }
-/* this is the setting to move box from right to left */
+/* located screen right */
 .about-view {
     height: 100%;
     width: 100%;
     right: 0;
     overflow: hidden;
 }
-/* located to the left */
+/* located to screen left */
 .portfolio-view {
     height: 100%;
     width: 100%;
     left: -100%;
     overflow: hidden;
 }
+/* located screen bottom */
 .contact-view {
     height: 100%;
     width: 100%;
@@ -127,8 +131,8 @@ body {
     background-position: bottom center;
 }
 
-
-#nav, h1, h2, h3, li, a {
+/* element settings */
+#nav, h1, h2, li, a {
     color: black;
     font-size: 0rem;
     font-family: 'Nanum Brush Script', cursive;
@@ -172,6 +176,72 @@ button {
     border: none;
     cursor: pointer;
 }
+/* back button styling */
+.name-wrap {
+    position: fixed;
+    top: 1vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+}
+.name {
+    color: black;
+    font-size: 2rem;
+    font-family: 'Nanum Brush Script', cursive;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
+    position: relative;
+    z-index: 3;
+    text-decoration: none;
+    border-bottom: 1.5px solid black;
+
+}
+.back-button {
+    color: black;
+    height: 50%;
+    font-size: 2rem;
+    font-family: 'Nanum Brush Script', cursive;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
+    position: relative;
+    z-index: 3;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 50%;
+    letter-spacing: .01rem; 
+}
+.up {
+    transform: rotate(90deg);
+}
+/* end back button styling */
+
+/* form styling */
+form {
+    height: 60vh;
+    width: 60vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 3fr; 
+    margin-right: auto;
+    margin-left: auto;  
+}
+label {
+    color: black;
+    height: 50%;
+    font-size: 4rem;
+    font-family: 'Nanum Brush Script', cursive;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
+    z-index: 3;
+}
+input {
+    opacity: .9;
+}
+#name {
+    height: 4vh;
+}
+#email {
+    height: 4vh;
+}
 .hidden {
     display: 
 }
@@ -184,6 +254,7 @@ button {
 .portfolio {
     opacity: 0;
 }
+/* svg styling */
 #volcano {
     position: absolute;
     left: 15%;
@@ -289,17 +360,20 @@ button {
     transform: scale(1.3);
     animation-duration: 37s;
     animation-delay: 10s;
+    z-index: 0;
 }
 .cloud--3 {
     top: 25%;
     animation-duration: 38.6s;
     animation-delay: 4s;
+
 }
 .cloud--4 {
     top: 30%;
     transform: scale(1.1);
     animation-duration: 39s;
     animation-delay: 15s;
+    z-index: 3;
 }
 
 #cloud--1 path {
@@ -352,11 +426,11 @@ button {
     animation: draw 3s ease-in-out 2s infinite alternate-reverse;
     overflow: hidden;
 }
+/* end svg styling */
 
 
 
-
-
+/* keyframe animations */
 @keyframes fly-left-1 {
     0% {
       -webkit-transform: scale(0.3) translateX(-10vw);
@@ -433,3 +507,4 @@ button {
         transform: rotate(8deg) scale(1.17);
     }
 }
+/* end keyframe animation */

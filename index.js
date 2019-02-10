@@ -1,117 +1,6 @@
 'use strict'
-//navigation click 
-// function navigationClick() {
-//   $('.js_home_button').on("click", function() {
-//     event.preventDefault();
-//     i++;
-//     let current = $('body').data("id");
-//     let target = "";
-//     let index = 0;
-//     console.log(current, target, index);
-  
-//     target = (this.id);
-//     index = $(this).data("num");
-//     console.log(current, target, index);
-//     fontGrow(target);
-//     navFadeOut();
-//     removeNavElement();
-//     removeDOM(current);
-//     changeDomValue(target);
-//     console.log(`changeDOM() ran. expected: '${target}' actual: '${$('body').data("id")}'`);
-//     current = target;
-//     console.log(current, target, index);
-//     createNewPage(current, index);
-//     // fontGrow(current);
-//     // resetFontSize();
-//     // fadeInBackground();
-//   });
-//   $('.js_about_button').on("click", function() {
-//     event.preventDefault();
-//     let current = $('body').data("id");
-//     let target = "";
-//     let index = 0;
-//     console.log(current, target, index);
-  
-//     target = (this.id);
-//     index = $(this).data("num");
-//     console.log(current, target, index);
-//     fontGrow(target);
-//     navFadeOut();
-//     removeNavElement();
-//     removeDOM(current);
-//     changeDomValue(target);
-//     console.log(`changeDOM() ran. expected: '${target}' actual: '${$('body').data("id")}'`);
-//     current = target;
-//     console.log(current, target, index);
-//     createNewPage(current, index);
-//     // fontGrow(current);
-//     // resetFontSize();
-//     // fadeInBackground();
-//   });
-//   $('.js_portfolio_button').on("click", function() {
-//     event.preventDefault();
-//     let current = $('body').data("id");
-//     let target = "";
-//     let index = 0;
-//     console.log(current, target, index);
-  
-//     target = (this.id);
-//     index = $(this).data("num");
-//     console.log(current, target, index);
-//     fontGrow(target);
-//     navFadeOut();
-//     removeNavElement();
-//     removeDOM(current);
-//     changeDomValue(target);
-//     console.log(`changeDOM() ran. expected: '${target}' actual: '${$('body').data("id")}'`);
-//     current = target;
-//     console.log(current, target, index);
-//     createNewPage(current, index);
-//     // fontGrow(current);
-//     // resetFontSize();
-//     // fadeInBackground();
-//   });  
-//   $('.js_contact_button').on("click", function() {
-//     event.preventDefault();
-//     let current = $('body').data("id");
-//     let target = "";
-//     let index = 0;
-//     console.log(current, target, index);
-  
-//     target = (this.id);
-//     index = $(this).data("num");
-//     console.log(current, target, index);
-//     fontGrow(target);
-//     navFadeOut();
-//     removeNavElement();
-//     removeDOM(current);
-//     changeDomValue(target);
-//     console.log(`changeDOM() ran. expected: '${target}' actual: '${$('body').data("id")}'`);
-//     current = target;
-//     console.log(current, target, index);
-//     createNewPage(current, index);
-//     // fontGrow(current);
-//     // resetFontSize();
-//     // fadeInBackground();
-//   });
-// };
 
-//handle button click
-//handle view change
 function handleViewChange() {
-  // let container = document.querySelector('.container');
-  // let backButton = document.querySelector('.back-button');
-  // let buttons = document.querySelectorAll('.navbutton');
-  // let selectedButton = $('.navbutton');
-  // let targetScreen = '';
-  // console.log(selectedButton);
-  // console.log(targetScreen);
-  // function onViewChange(string) {
-  //   container.classList.toggle(`${string}`);
-  // }
-  // for (var i = 0; i < buttons.length; i++) {
-  //   buttons[i].addEventListener('click', onViewChange, false);
-  // }
   let button = ''
     $('.navbutton').click(function() {
       button = this.id;
@@ -121,8 +10,6 @@ function handleViewChange() {
     $('.back-button').click(function(){
       $('.container').toggleClass(button);
     });
-    // And switch it back again when you click the back button
-  // backButton.addEventListener('click', onViewChange(``));
 }
 //transition new DOM elements
 function createNewPage(string, num) {
