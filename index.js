@@ -21,9 +21,13 @@ function handleSubmitForm() {
     e.preventDefault();
     
     //validate the submit form
-    validateForm();
-    console.log(`handleSubmitForm() was a success`)
+    if (validateForm() === true) {
+      console.log(`handleSubmitForm() was a success`)
 
+    } else {
+      console.log(`handleSubmitForm() was a fail`)
+    };
+    
   });
 };
 //validate the email 

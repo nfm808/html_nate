@@ -132,7 +132,7 @@ body {
 }
 
 /* element settings */
-#nav, h1, h2, li, a {
+#nav, h1, h2, li {
     color: black;
     font-size: 0rem;
     font-family: 'Nanum Brush Script', cursive;
@@ -144,7 +144,7 @@ body {
 li {
     font-size: 0rem;
 }
-p, span {
+p, span, a {
     color: black;
     font-size:2rem;
     font-family: 'Open Sans', sans-serif;
@@ -256,12 +256,105 @@ textarea {
 }
 #name {
     height: 4vh;
+    z-index: 2;
 }
 #email {
     height: 4vh;
+    z-index: 2;
+}
+#message {
+    z-index: 2;
 }
 /* end contact form styling */
 
+/* -portfolio page styling */
+.portfolio-panel {
+    height: 70vh;
+    width: 50vw;
+    text-align: center;
+    z-index: 3;
+}
+.portfolio-panel h2 {
+    font-size: 2.5rem;
+}
+.portfolio-panel-items {
+    margin-top: 8vh;
+    height: 50vh;
+    width: 50vw;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .7));
+    /* display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    justify-items: center;
+    align-items: center;
+    align-content: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.thumbnail {
+    height: 60%;
+    width: auto;
+    background-image: url('assets/img/gameplay_ear_training.jpg');
+}
+.thumbnail:hover {
+    filter: blur(1px);
+}
+.thumbnail:active {
+    filter: grayscale();
+    transform: scale(.9);
+}
+.thumbnail:active:after {
+    transform: scale(1);
+}
+
+/* - end of portfolio page - */
+
+/* -modal setup */
+.overlay {
+    height: 100%;
+    width: 100%;
+    /* display: none; */
+    opacity: 1;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 4;
+}
+.pop-up {
+    height: 85%;
+    width: 85%;
+    /* display: none; */
+    position: absolute;
+    opacity: 1;
+    top: 8%;
+    left: 8%;
+    background: rgba(243,242,242, 0.9);
+    z-index: 4;
+}
+.modal-image {
+    height: 15%;
+    z-index: inherit;
+}
+.live-site, a {
+    font-size: 1rem;
+    z-index: inherit;
+}
+.source-code, a {
+    font-size: 1rem;
+    z-index: inherit;
+}
+#pop-description {
+    font-size: 1rem;
+    z-index: inherit;
+}
+.close {
+    font-size: .5rem;
+    border: .5px solid black;
+    z-index: inherit;
+}
+/* end -modal  */
 .hidden {
     display: 
 }
@@ -375,13 +468,14 @@ textarea {
     transform: rotate(-30deg);
     animation-duration: 43s;
     animation-delay: 0;
+    z-index: 1;
 }
 .cloud--2 {
     top: 32%;
     transform: scale(1.3);
     animation-duration: 37s;
     animation-delay: 10s;
-    z-index: 0;
+    z-index: 3;
 }
 .cloud--3 {
     top: 25%;
@@ -426,6 +520,7 @@ textarea {
     stroke-dashoffset: 130;
     animation: draw 2.5s ease-in-out infinite alternate-reverse;
     overflow: hidden;
+    z-index: 1;
 }
 #fish--2 path {
     width: auto;
@@ -436,6 +531,7 @@ textarea {
     stroke-dashoffset: 120;
     animation: draw 3s ease-in-out 2s infinite alternate-reverse;
     overflow: hidden;
+    z-index: 1;
 }
 #fish--3 path {
     width: auto;
