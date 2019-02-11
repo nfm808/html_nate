@@ -1,5 +1,6 @@
 'use strict'
-
+// move the view around between absolutely
+// positioned elements
 function handleViewChange() {
   let button = ''
     $('.navbutton').click(function() {
@@ -10,6 +11,21 @@ function handleViewChange() {
       $('.container').toggleClass(button);
     });
 }
+// handle modal
+// when adding additional portfolio pieces
+// will create an object variable to deal with
+// updating which modal content is generated
+function handleModal() {
+  
+  //open modal
+  $('#ear-training-button').click(function() {
+    $('.modal').show(400)
+  });
+  //close modal
+  $('.close-button').click(function(){
+    $('.modal').hide(400);
+  });
+};
 //handle keyboard navigation
 function handleKeyboardNav() {
   console.log(`handleKeyboardNav() ran`);
@@ -184,6 +200,7 @@ function audioClick() {
 function handlePage() {
   // welcomeAnimation();
   // navigationClick();
+  handleModal();
   handleSubmitForm();
   handleKeyboardNav();
   handleViewChange();
