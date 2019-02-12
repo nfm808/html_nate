@@ -198,7 +198,7 @@ function audioClick() {
   });
 };
 function handlePage() {
-  // welcomeAnimation();
+  welcomeAnimation();
   // navigationClick();
   handleModal();
   handleSubmitForm();
