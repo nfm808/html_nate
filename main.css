@@ -464,8 +464,8 @@ textarea {
 }
 #about-image-3 {
     height: 40%;
-    align-self: center;
-    justify-self: center;
+    align-self: cenbottomter;
+    justify-self: bottom;
 }
 
 .text-background {
