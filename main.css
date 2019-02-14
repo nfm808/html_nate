@@ -1103,6 +1103,46 @@ textarea {
         left: 15%;
     }
 }
+@media screen and (min-height: 760px) and (min-width: 1500px) and (orientation: landscape) {
+    #nav {
+        flex-direction: column;
+    }
+    #about-image-1 {
+        align-self: center;
+    }
+    #about-image-4 {
+        height: 80%;
+        align-self: end;
+        justify-self: end;
+        margin-right: -12%;
+    }
+    #about-image-3-container {
+        align-self: end;
+        justify-self: start;
+        margin-left: -10%;
+    }
+    #about-image-3 {
+        height: 100%;
+    }
+    .contact-form {
+        margin-top: -30%;
+    }
+    .text-background, #p-1, #p-2, #p-3 {
+        grid-column: 3 / 4;
+        margin-left: 5%;
+    }
+    .overlay {
+        align-items: center;
+        justify-content: center;
+    }
+    .pop-up {
+        width: 66%;
+        height: 70%;
+        top: 15%;
+        left: 15%;
+    }
+}
+
 @media screen and (min-width: 1920px) and (min-height: 1080px) and (orientation: landscape) {
     #p-1 {
         padding-top: 5%;
