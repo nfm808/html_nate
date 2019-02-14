@@ -995,7 +995,7 @@ textarea {
         grid-row: 5 / 6;
     }
 }
-@media screen and (min-height:760px) and (min-width: 1024px) and (orientation: landscape) {
+@media screen  and (min-width: 1024px) and (orientation: landscape) {
     .name {
         font-size: 3rem;
     }
@@ -1065,7 +1065,7 @@ textarea {
         font-size: 3rem;
     }
 }
-@media screen and (min-height: 760px) and (min-width: 1366px) and (orientation: landscape) {
+@media screen and (min-width: 1366px) and (orientation: landscape) {
     #nav {
         flex-direction: column;
     }
@@ -1103,7 +1103,7 @@ textarea {
         left: 15%;
     }
 }
-@media screen and (min-height: 760px) and (min-width: 1500px) and (orientation: landscape) {
+@media screen and (min-width: 1550px) and (orientation: landscape) {
     #nav {
         flex-direction: column;
     }
@@ -1143,7 +1143,7 @@ textarea {
     }
 }
 
-@media screen and (min-width: 1920px) and (min-height: 1080px) and (orientation: landscape) {
+@media screen and (min-width: 1920px) and (orientation: landscape) {
     #p-1 {
         padding-top: 5%;
     }
