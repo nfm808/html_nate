@@ -123,25 +123,6 @@ function changeDomValue(string) {
 function removeDOM(string) {
   $(`.${string}`).remove();
 };
-//welcome message animation
-function welcomeAnimation() {
-  let timer = setTimeout(e, 2000);
-  function e() {
-    $('.welcome').animate({fontSize: "4rem"}, 1000);
-    clearTimeout(timer);
-  };
-  let timer2 = setTimeout(f, 10000);
-  function f() {
-    $('.welcome').animate({fontSize: "4.5rem"}, 200);
-    clearTimeout(timer2);
-    fadeOut('welcome');
-    let timer3 = setTimeout(g, 100);
-    function g() {
-      $('.welcome').remove();
-      clearTimeout(timer3);
-    };
-  };
-};
 //nav grow in transition
 function navGrow() {
   // window.setTimeout(e, 16000)
@@ -198,17 +179,14 @@ function audioClick() {
   });
 };
 function handlePage() {
-  welcomeAnimation();
-  // navigationClick();
   handleModal();
   handleSubmitForm();
-  handleKeyboardNav();
+  // handleKeyboardNav();
   handleViewChange();
   audioClick();
   navGrow();
   // findPathLength();
   // addElement();
-  // findPathLength(volcano);
 };
 
 // find path length of svg
