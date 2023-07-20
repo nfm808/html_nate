@@ -28,9 +28,9 @@
             
             <nav class="navigation">
                 <ul class="nav" id="nav">
-                    <li id="a"><button class="navbutton js_about_button" type="button" data-num="1" id="view-change-left">About</button></li>
-                    <li id="p"><button data-num="0" class="navbutton js_portfolio_button" id="view-change-right" type="button">Portfolio</button></li>
-                    <li id="c"><button data-num="2" class="navbutton js_contact_button" type="button" id="view-change-up">Contact</button></li>
+                    <li class="nav-item" id="a"><button class="navbutton js_about_button" type="button" data-num="1" id="view-change-left">About</button></li>
+                    <li class="nav-item" id="p"><button data-num="0" class="navbutton js_portfolio_button" id="view-change-right" type="button">Portfolio</button></li>
+                    <li class="nav-item" id="c"><button data-num="2" class="navbutton js_contact_button" type="button" id="view-change-up">Contact</button></li>
                 </ul> 
             </nav>
             <svg id="sailboat" class="home" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
@@ -65,25 +65,29 @@
             </div>
             <div class="about-me">
                 <h2>Aloha!</h2>
-                <figure class="img-container">
+                <div class="about-me--images">
+                  <figure class="img-container">
                     <img class="about-image" id="about-image-1" src="assets/img/headshot.jpg" alt="image of nathan and family">
                 </figure>
+                <!-- <figure class="img-container">
+                    <img class="about-image" id="" src="assets/img/waterfall.jpg" alt="image of nathan on a waterfall">
+                </figure> -->
+                <figure class="img-container">
+                    <img class="about-image" id="about-image-4" src="assets/img/deepblue.jpg" alt="picture of nathan freediving in deep blue ocean">
+                </figure>
+                
+              </div>
+                
                 
                 <div class="text-background">
                     <p id="">Being in a team that develops with cutting edge technologies makes me jump out of bed.  Building an end-user experience that is both engaging and efficient brings tears of joy to my eyes.</p> 
                     <p id="">When I'm not learning code you can find me playing in the mountains, under the sea, or exploring the jungle with my family.</p>
                     <p id="">You might even catch me playing guitar on stage.</p>
                 </div>
-                <figure class="img-container">
-                    <img class="about-image" id="about-image-2" src="assets/img/waterfall.jpg" alt="image of nathan on a waterfall">
-                </figure>
-                <figure class="img-container">
-                    <img class="hidden-about about-image" id="about-image-4" src="assets/img/deepblue.jpg" alt="picture of nathan freediving in deep blue ocean">
-                </figure>
-                <figure class="img-container">
-                    <a class="about-image" id="about-image-3-container" href="https://www.youtube.com/watch?v=yD4qWra28BY" target="_blank"><img id="about-image-3" src="assets/img/guitar.jpg" alt="image of guitar"></a>
-                </figure>
                 
+                <figure class="img-container">
+                  <a class="about-image" id="about-image-3-container" href="https://www.youtube.com/watch?v=yD4qWra28BY" target="_blank"><img id="about-image-3" src="assets/img/guitar.jpg" alt="image of guitar"></a>
+              </figure>
                 
                 
             </div> 
