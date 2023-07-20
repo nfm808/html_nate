@@ -37,20 +37,14 @@
 
 html {
   cursor: default; /* 1 */
-  font-family:
-    system-ui,
-    /* macOS 10.11-10.12 */ -apple-system,
-    /* Windows 6+ */ Segoe UI,
-    /* Android 4+ */ Roboto,
-    /* Ubuntu 10.10+ */ Ubuntu,
-    /* Gnome 3+ */ Cantarell,
-    /* KDE Plasma 5+ */ Noto Sans,
-    /* fallback */ sans-serif,
-    /* macOS emoji */ "Apple Color Emoji",
-    /* Windows emoji */ "Segoe UI Emoji",
-    /* Windows emoji */ "Segoe UI Symbol",
-    /* Linux emoji */ "Noto Color Emoji"; /* 2 */
+  font-family: system-ui, /* macOS 10.11-10.12 */ -apple-system,
+    /* Windows 6+ */ Segoe UI, /* Android 4+ */ Roboto,
+    /* Ubuntu 10.10+ */ Ubuntu, /* Gnome 3+ */ Cantarell,
+    /* KDE Plasma 5+ */ Noto Sans, /* fallback */ sans-serif,
+    /* macOS emoji */ "Apple Color Emoji", /* Windows emoji */ "Segoe UI Emoji",
+    /* Windows emoji */ "Segoe UI Symbol", /* Linux emoji */ "Noto Color Emoji"; /* 2 */
 
+  font-size: 1rem;
   line-height: 1.15; /* 3 */
   -moz-tab-size: 4; /* 4 */
   tab-size: 4; /* 4 */
@@ -76,7 +70,7 @@ body {
  */
 
 h1 {
-  font-size: 2em;
+  // font-size: 2rem;
   margin: 0.67em 0;
 }
 
@@ -118,16 +112,12 @@ nav ul {
 
 pre {
   font-family:
-    /* macOS 10.10+ */ Menlo,
-    /* Windows 6+ */ Consolas,
-    /* Android 4+ */ Roboto Mono,
-    /* Ubuntu 10.10+ */ Ubuntu Monospace,
-    /* KDE Plasma 5+ */ Noto Mono,
-    /* KDE Plasma 4+ */ Oxygen Mono,
-    /* Linux/OpenOffice fallback */ Liberation Mono,
-    /* fallback */ monospace; /* 1 */
+    /* macOS 10.10+ */ Menlo, /* Windows 6+ */ Consolas,
+    /* Android 4+ */ Roboto Mono, /* Ubuntu 10.10+ */ Ubuntu Monospace,
+    /* KDE Plasma 5+ */ Noto Mono, /* KDE Plasma 4+ */ Oxygen Mono,
+    /* Linux/OpenOffice fallback */ Liberation Mono, /* fallback */ monospace; /* 1 */
 
-  font-size: 1em; /* 2 */
+  // font-size: 1rem; /* 2 */
 }
 
 /* Text-level semantics
@@ -169,16 +159,12 @@ code,
 kbd,
 samp {
   font-family:
-    /* macOS 10.10+ */ Menlo,
-    /* Windows 6+ */ Consolas,
-    /* Android 4+ */ Roboto Mono,
-    /* Ubuntu 10.10+ */ Ubuntu Monospace,
-    /* KDE Plasma 5+ */ Noto Mono,
-    /* KDE Plasma 4+ */ Oxygen Mono,
-    /* Linux/OpenOffice fallback */ Liberation Mono,
-    /* fallback */ monospace; /* 1 */
+    /* macOS 10.10+ */ Menlo, /* Windows 6+ */ Consolas,
+    /* Android 4+ */ Roboto Mono, /* Ubuntu 10.10+ */ Ubuntu Monospace,
+    /* KDE Plasma 5+ */ Noto Mono, /* KDE Plasma 4+ */ Oxygen Mono,
+    /* Linux/OpenOffice fallback */ Liberation Mono, /* fallback */ monospace; /* 1 */
 
-  font-size: 1em; /* 2 */
+  // font-size: 1rem; /* 2 */
 }
 
 /**
@@ -186,7 +172,7 @@ samp {
  */
 
 small {
-  font-size: 80%;
+  // font-size: 80%;
 }
 
 /*
@@ -288,7 +274,7 @@ input,
 select,
 textarea {
   font-family: inherit;
-  font-size: inherit;
+  // font-size: inherit;
   line-height: inherit;
 }
 
@@ -328,7 +314,7 @@ button,
  */
 
 fieldset {
-  padding: 0.35em 0.75em 0.625em;
+  padding: 0.35rem 0.75rem 0.625rem;
 }
 
 /**
@@ -478,7 +464,7 @@ dialog {
   height: fit-content;
   left: 0;
   margin: auto;
-  padding: 1em;
+  padding: 1rem;
   position: absolute;
   right: 0;
   width: -moz-fit-content;
