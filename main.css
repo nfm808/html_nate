@@ -557,7 +557,7 @@ a {
 	fill: none;
 	stroke-dasharray: 316;
 	stroke-dashoffset: 316;
-	animation: draw 8s ease-in 8s forwards, fill 5s linear 18s forwards;
+	animation: draw 8s ease-in 1s forwards, fill 5s linear 8s forwards;
 	overflow: hidden;
 }
 .waves {
@@ -601,7 +601,7 @@ a {
 
 	stroke-dasharray: 12774;
 	stroke-dashoffset: 12774;
-	animation: fill 20s ease-in forwards;
+	animation: fill 12s ease-in forwards;
 	overflow: hidden;
 }
 #sun {
