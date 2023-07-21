@@ -595,7 +595,7 @@ a {
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
   animation: rock 3s ease-in-out infinite alternate;
   overflow: hidden;
-  margin: none;
+  margin: 0;
   z-index: 2;
 }
 .sailboat path {
@@ -617,7 +617,7 @@ a {
   width: 11vw;
   transform: translateY(8px) scale(1);
   overflow: hidden;
-  margin: none;
+  margin: 0;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
   animation: pulse 30s ease-in-out infinite alternate;
 }
