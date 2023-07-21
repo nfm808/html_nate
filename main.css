@@ -523,7 +523,7 @@ a {
   padding: 1rem 0.75rem;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
   background: rgba(243, 241, 241, 0.7);
-
+  max-width: 500px;
   border-radius: 4px;
 }
 
