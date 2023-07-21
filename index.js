@@ -60,12 +60,12 @@ function handleSubmitForm() {
           if (response.status == 200) {
             $("#form-status").text("Submission Successful");
           } else {
-            console.log(response);
+            // console.log(response);
             $("#form-status").text(json.message);
           }
         })
         .catch(error => {
-          console.log(error);
+          // console.log(error);
           $("#form-status").text("Something Went Wrong!");
         });
     } else {
