@@ -32,12 +32,12 @@ function handleKeyboardNav() {
 //--contact form--
 function handleSubmitForm() {
 	//submit listener
-	$('#submit').click(function (e) {
+	$('#contact-form').on('submit', function (e) {
 		e.preventDefault();
-
+		console.log('handleSubmitForm Ran: ', { name: e.target[0].value });
 		//validate the submit form
 		if (validateForm() === true) {
-			console.log(`handleSubmitForm() was a success`);
+			console.log(`handleSubmitForm() was a success: ${e}`);
 		} else {
 			console.log(`handleSubmitForm() was a fail`);
 		}
