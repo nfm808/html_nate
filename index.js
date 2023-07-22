@@ -59,14 +59,20 @@ function handleSubmitForm() {
           let json = await response.json();
           if (response.status == 200) {
             $("#form-status").text("Submission Successful");
+            $("form").hide();
+            $("#form-status").show();
           } else {
             // console.log(response);
             $("#form-status").text(json.message);
+            $("form").hide();
+            $("#form-status").show();
           }
         })
         .catch(error => {
           // console.log(error);
           $("#form-status").text("Something Went Wrong!");
+          $("form").hide();
+          $("#form-status").show();
         });
     } else {
       console.log(`handleSubmitForm() was a fail`);
