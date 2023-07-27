@@ -27,6 +27,9 @@ body {
   /* overflow: hidden; */
   /* text-align: center; */
 }
+p {
+  margin: 0;
+}
 /* containers for screen movement */
 .container {
   width: 100%;
@@ -320,27 +323,64 @@ textarea {
 /* -portfolio page styling */
 .portfolio-panel {
   height: 80%;
-  width: 60%;
+  width: 95%;
   text-align: center;
-  z-index: 4;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .portfolio-panel h2 {
   font-size: 2.5rem;
-  margin-bottom: -1%;
+}
+.portfolio-panel h3 {
+  font-size: 2.5rem;
+}
+.portfolio-panel p {
+  padding: 0.25rem;
+  text-align: left;
+}
+.portfolio-panel ul {
+  margin: 0;
+  padding: 0;
 }
 .portfolio-panel-items {
-  height: 80%;
-  width: auto;
+  width: 100%;
+  overflow-y: scroll;
+  background: rgba(243, 241, 241, 0.7);
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
   /* display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr 3fr 1fr;
     justify-items: center;
     align-items: center;
     align-content: center; */
+}
+.portfolio-panel--item {
+  padding: 0.25rem;
+}
+.portfolio--item-details {
+  background: inherit;
+  width: 100%;
+}
+.portfolio--img-container {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  padding: 0.25rem;
+}
+.portfolio--img {
+  width: 100%;
+  height: auto;
+}
+.portfolio-panel-text {
+  font-family: initial;
+  font-size: 1rem;
+}
+.portfolio-panel-source-code {
+  font-family: inherit;
+  font-size: 1rem;
 }
 .thumbnail {
   height: 50%;
@@ -358,7 +398,11 @@ textarea {
 .thumbnail:active:after {
   transform: scale(1);
 }
-
+.line {
+  margin: 1rem 0;
+  border-bottom: 1px solid black;
+  width: 95%;
+}
 /* - end of portfolio page - */
 
 /* -modal begin */
@@ -613,6 +657,7 @@ a {
 }
 #sun {
   position: absolute;
+  cursor: pointer;
   left: 75%;
   top: 8%;
   height: 11vh;
@@ -854,6 +899,9 @@ a {
     margin-top: 1%;
     border-radius: 4px;
   }
+  .portfolio-panel--item {
+    display: flex;
+  }
   .portfolio-panel-items h2 {
     font-size: 3rem;
   }
@@ -939,7 +987,7 @@ a {
   }
   #submit {
     font-size: 3rem;
-    width: 33%;
+    /* width: 33%; */
     margin: 1rem auto;
   }
   .social-container {
