@@ -39,15 +39,16 @@ function handleSubmitForm() {
     if (validateForm() === true) {
       console.log("handleSubmitForm Ran: ");
       let formData = {
-        access_key: "76b761e7-c5ed-4d6a-8eb7-9892c29a3305",
+        access_key: "5c1f204f-8111-458b-b614-b15f735c3746",
         subject: "htmlnate form submission",
         name: e.target[0].value,
         email: e.target[1].value,
         message: e.target[2].value,
+        apiKey: "7c855468-9129-4b85-b26a-4736593670a4",
       };
       const body = JSON.stringify(formData);
       console.log("formData: ", formData);
-      fetch("https://api.web3forms.com/submit", {
+      fetch("https://mailer.luxurysandbox.com/inquiry", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
