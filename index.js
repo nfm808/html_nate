@@ -47,6 +47,13 @@ function handleSubmitForm() {
         message: e.target[2].value,
         apiKey: "7c855468-9129-4b85-b26a-4736593670a4",
       };
+      const answer = 42;
+      if (e.target[3].value !== answer) {
+        $("#form-status").text("Something Went Wrong!");
+        $("form").hide();
+        $("#form-status").show();
+        return;
+      }
       const body = JSON.stringify(formData);
       console.log("formData: ", formData);
       fetch("https://mailer.luxurysandbox.com/inquiry", {

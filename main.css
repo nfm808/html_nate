@@ -271,7 +271,11 @@ button {
   display: none;
   color: black;
 }
-
+.form--challenge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 form {
   height: 85%;
   width: 100%;
