@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nutrition JSON Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      /* Custom styles for better focus and visual appeal */
+      .form-input {
+        @apply w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out;
+      }
+      .form-textarea {
+        @apply w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out min-h-[100px];
+      }
+      .btn-primary {
+        @apply bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition duration-150 ease-in-out;
+      }
+      .btn-secondary {
+        @apply bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-75 transition duration-150 ease-in-out;
+      }
+      .output-area {
+        @apply w-full p-4 border border-gray-300 rounded-lg bg-gray-50 shadow-sm min-h-[200px] whitespace-pre-wrap break-all;
+      }
+      .required-label::after {
+        content: "*";
+        color: red;
+        margin-left: 2px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800 p-4 md:p-8">
+    <div
+      class="container mx-auto max-w-3xl bg-white p-6 md:p-8 rounded-xl shadow-2xl"
+    >
+      <header class="mb-8 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Nutrition Facts JSON Generator
+        </h1>
+        <p class="text-gray-600 mt-2">
+          Fill in the form below to generate the JSON for your product
+          metafield.
+        </p>
+      </header>
+
+      <form id="nutritionForm" class="space-y-6">
+        <fieldset class="border border-gray-300 p-4 rounded-lg">
+          <legend class="text-lg font-semibold text-indigo-600 px-2">
+            General Information
+          </legend>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label
+                for="serving_size"
+                class="block text-sm font-medium text-gray-700 mb-1 required-label"
+                >Serving Size</label
+              >
+              <input
+                type="text"
+                id="serving_size"
+                name="serving_size"
+                class="form-input"
+                placeholder="e.g., 1 cup (240ml)"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="servings_per_container"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Servings Per Container</label
+              >
+              <input
+                type="text"
+                id="servings_per_container"
+                name="servings_per_container"
+                class="form-input"
+                placeholder="e.g., About 2"
+              />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="border border-gray-300 p-4 rounded-lg">
+          <legend class="text-lg font-semibold text-indigo-600 px-2">
+            Macronutrients
+          </legend>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div>
+              <label
+                for="calories"
+                class="block text-sm font-medium text-gray-700 mb-1 required-label"
+                >Calories</label
+              >
+              <input
+                type="number"
+                id="calories"
+                name="calories"
+                class="form-input"
+                placeholder="e.g., 150"
+                step="any"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="total_fat"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Total Fat (g)</label
+              >
+              <input
+                type="number"
+                id="total_fat"
+                name="total_fat"
+                class="form-input"
+                placeholder="e.g., 8"
+                step="any"
+              />
+            </div>
+            <div>
+              <label
+                for="saturated_fat"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Saturated Fat (g)</label
+              >
+              <input
+                type="number"
+                id="saturated_fat"
+                name="saturated_fat"
+                class="form-input"
+                placeholder="e.g., 1"
+                step="any"
+              />
+            </div>
+            <div>
+              <label
+                for="trans_fat"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Trans Fat (g)</label
+              >
+              <input
+                type="number"
+                id="trans_fat"
+                name="trans_fat"
+                class="form-input"
+                placeholder="e.g., 0"
+                step="any"
+              />
+            </div>
+            <div>
+              <label
+                for="cholesterol"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Cholesterol (mg)</label
+              >
+              <input
+                type="number"
+                id="cholesterol"
+                name="cholesterol"
+                class="form-input"
+                placeholder="e.g., 5"
+                step="any"
+              />
+            </div>
+            <div>
+              <label
+                for="sodium"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Sodium (mg)</label
+              >
+              <input
+                type="number"
+                id="sodium"
+                name="sodium"
+                class="form-input"
+                placeholder="e.g., 160"
+                step="any"
+              />
+            </div>
+            <div>
+              <label
+                for="total_carbohydrate"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Total Carbohydrate (g)</label
+              >
+              <input
+                type="number"
+                id="total_carbohydrate"
+                name="total_carbohydrate"
+                class="form-input"
+                placeholder="e.g., 30"
+                step="any"
+              />
+            </div>
+            <div>
+              <label
+                for="dietary_fiber"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Dietary Fiber (g)</label
+              >
+              <input
+                type="number"
+                id="dietary_fiber"
+                name="dietary_fiber"
+                class="form-input"
+                placeholder="e.g., 4"
+                step="any"
+              />
+            </div>
+            <div>
+              <label
+                for="total_sugars"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Total Sugars (g)</label
+              >
+              <input
+                type="number"
+                id="total_sugars"
+                name="total_sugars"
+                class="form-input"
+                placeholder="e.g., 12"
+                step="any"
+              />
+            </div>
+            <div>
+              <label
+                for="added_sugars"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Added Sugars (g)</label
+              >
+              <input
+                type="number"
+                id="added_sugars"
+                name="added_sugars"
+                class="form-input"
+                placeholder="e.g., 10"
+                step="any"
+              />
+            </div>
+            <div>
+              <label
+                for="protein"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Protein (g)</label
+              >
+              <input
+                type="number"
+                id="protein"
+                name="protein"
+                class="form-input"
+                placeholder="e.g., 3"
+                step="any"
+              />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="border border-gray-300 p-4 rounded-lg">
+          <legend class="text-lg font-semibold text-indigo-600 px-2">
+            Vitamins & Minerals
+          </legend>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div>
+              <label
+                for="vitamin_d"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Vitamin D (mcg)</label
+              >
+              <input
+                type="number"
+                id="vitamin_d"
+                name="vitamin_d"
+                class="form-input"
+                placeholder="e.g., 2"
+                step="any"
+              />
+            </div>
+            <div>
+              <label
+                for="calcium"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Calcium (mg)</label
+              >
+              <input
+                type="number"
+                id="calcium"
+                name="calcium"
+                class="form-input"
+                placeholder="e.g., 260"
+                step="any"
+              />
+            </div>
+            <div>
+              <label
+                for="iron"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Iron (mg)</label
+              >
+              <input
+                type="number"
+                id="iron"
+                name="iron"
+                class="form-input"
+                placeholder="e.g., 0.8"
+                step="any"
+              />
+            </div>
+            <div>
+              <label
+                for="potassium"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Potassium (mg)</label
+              >
+              <input
+                type="number"
+                id="potassium"
+                name="potassium"
+                class="form-input"
+                placeholder="e.g., 235"
+                step="any"
+              />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="border border-gray-300 p-4 rounded-lg">
+          <legend class="text-lg font-semibold text-indigo-600 px-2">
+            Ingredients & Allergens
+          </legend>
+          <div>
+            <label
+              for="ingredients"
+              class="block text-sm font-medium text-gray-700 mb-1 required-label"
+              >Ingredients</label
+            >
+            <textarea
+              id="ingredients"
+              name="ingredients"
+              rows="4"
+              class="form-textarea"
+              placeholder="e.g., Whole grain oats, sugar, oat bran..."
+              required
+            ></textarea>
+          </div>
+          <div class="mt-4">
+            <label
+              for="allergens"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Allergens</label
+            >
+            <textarea
+              id="allergens"
+              name="allergens"
+              rows="3"
+              class="form-textarea"
+              placeholder="e.g., Contains wheat and soy ingredients."
+            ></textarea>
+          </div>
+        </fieldset>
+
+        <div
+          class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8"
+        >
+          <button
+            type="button"
+            id="generateJsonBtn"
+            class="btn-primary w-full sm:w-auto"
+          >
+            Generate JSON
+          </button>
+          <button type="reset" class="btn-secondary w-full sm:w-auto">
+            Clear Form
+          </button>
+        </div>
+      </form>
+
+      <div class="mt-10">
+        <h2 class="text-2xl font-semibold text-indigo-700 mb-3">
+          Generated JSON Output:
+        </h2>
+        <div id="jsonOutputContainer" class="relative">
+          <pre id="jsonOutput" class="output-area"></pre>
+          <button
+            id="copyJsonBtn"
+            class="btn-primary absolute top-2 right-2 text-sm px-3 py-1 opacity-0 hover:opacity-100 transition-opacity duration-300"
+          >
+            Copy
+          </button>
+          <div
+            id="copyMessage"
+            class="absolute top-10 right-2 text-sm bg-green-500 text-white px-3 py-1 rounded-md shadow-md hidden"
+          >
+            Copied!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Wait for the DOM to be fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get references to form elements and output areas
+        const form = document.getElementById("nutritionForm");
+        const generateJsonBtn = document.getElementById("generateJsonBtn");
+        const jsonOutput = document.getElementById("jsonOutput");
+        const copyJsonBtn = document.getElementById("copyJsonBtn");
+        const jsonOutputContainer = document.getElementById(
+          "jsonOutputContainer"
+        );
+        const copyMessage = document.getElementById("copyMessage");
+
+        // Event listener for the "Generate JSON" button
+        generateJsonBtn.addEventListener("click", function () {
+          // Create a FormData object from the form
+          const formData = new FormData(form);
+          const nutritionData = {};
+
+          // Iterate over form entries
+          for (let [key, value] of formData.entries()) {
+            // Trim whitespace from string values
+            value = typeof value === "string" ? value.trim() : value;
+
+            // Only add to object if value is not empty
+            if (value !== "") {
+              // Try to convert numeric fields to numbers
+              const inputElement = form.elements[key];
+              if (inputElement && inputElement.type === "number") {
+                const numValue = parseFloat(value);
+                // Check if conversion was successful and it's a valid number
+                if (!isNaN(numValue)) {
+                  nutritionData[key] = numValue;
+                } else if (value) {
+                  // If it's not empty but not a valid number, keep as string (or handle error)
+                  nutritionData[key] = value; // Or you could skip/error
+                }
+              } else {
+                nutritionData[key] = value;
+              }
+            }
+          }
+
+          // Display the generated JSON, pretty-printed
+          jsonOutput.textContent = JSON.stringify(nutritionData, null, 2);
+          // Show the copy button if there's content
+          if (jsonOutput.textContent) {
+            copyJsonBtn.classList.remove("opacity-0");
+          } else {
+            copyJsonBtn.classList.add("opacity-0");
+          }
+        });
+
+        // Event listener for the "Copy JSON" button
+        copyJsonBtn.addEventListener("click", function () {
+          if (jsonOutput.textContent) {
+            navigator.clipboard
+              .writeText(jsonOutput.textContent)
+              .then(() => {
+                // Show "Copied!" message
+                copyMessage.classList.remove("hidden");
+                setTimeout(() => {
+                  copyMessage.classList.add("hidden");
+                }, 2000); // Hide message after 2 seconds
+              })
+              .catch(err => {
+                console.error("Failed to copy JSON: ", err);
+                // Fallback for older browsers (less common now)
+                try {
+                  const textArea = document.createElement("textarea");
+                  textArea.value = jsonOutput.textContent;
+                  document.body.appendChild(textArea);
+                  textArea.focus();
+                  textArea.select();
+                  document.execCommand("copy");
+                  document.body.removeChild(textArea);
+                  // Show "Copied!" message
+                  copyMessage.classList.remove("hidden");
+                  setTimeout(() => {
+                    copyMessage.classList.add("hidden");
+                  }, 2000);
+                } catch (execCommandErr) {
+                  alert("Failed to copy. Please copy manually.");
+                }
+              });
+          }
+        });
+
+        // Show/hide copy button on mouse enter/leave of the output container
+        jsonOutputContainer.addEventListener("mouseenter", () => {
+          if (jsonOutput.textContent) {
+            copyJsonBtn.classList.remove("opacity-0");
+          }
+        });
+        jsonOutputContainer.addEventListener("mouseleave", () => {
+          copyJsonBtn.classList.add("opacity-0");
+        });
+
+        // Clear form and output on reset
+        form.addEventListener("reset", () => {
+          jsonOutput.textContent = "";
+          copyJsonBtn.classList.add("opacity-0");
+        });
+      });
+    </script>
+  </body>
+</html>
