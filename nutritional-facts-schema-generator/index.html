@@ -44,8 +44,9 @@
         </h1>
         <p class="text-gray-600 mt-2">
           Fill in the form below to generate the JSON for your product
-          metafield. <br />Per Serving %DV is calculated by the Liquid template.
-          Per Container amounts and %DV must be entered here if applicable.
+          metafield. <br />Per Serving %DV and Per Container %DV are calculated
+          by the Liquid template. <br />Enter Per Container
+          <strong>amounts</strong> below if applicable.
         </p>
       </header>
 
@@ -101,8 +102,8 @@
                 min="0"
               />
               <p class="info-text">
-                If > 1, "Per Container" columns are shown. Populate PC fields
-                below.
+                If > 1, "Per Container" columns are shown. Populate PC amount
+                fields below.
               </p>
             </div>
           </div>
@@ -284,7 +285,7 @@
 
         <fieldset class="border border-gray-300 p-4 rounded-lg">
           <legend class="text-lg font-semibold text-indigo-600 px-2">
-            Macronutrients (Per Container)
+            Macronutrients (Per Container Amounts)
           </legend>
           <p class="info-text mb-4">
             Fill these if 'Servings Per Container (Numeric)' is greater than 1.
@@ -322,21 +323,6 @@
             </div>
             <div>
               <label
-                for="total_fat_pc_dv"
-                class="block text-sm font-medium text-gray-700 mb-1"
-                >Total Fat (PC) %DV</label
-              >
-              <input
-                type="number"
-                id="total_fat_pc_dv"
-                name="total_fat_pc_dv"
-                class="form-input"
-                placeholder="e.g., 21"
-                step="any"
-              />
-            </div>
-            <div>
-              <label
                 for="saturated_fat_pc"
                 class="block text-sm font-medium text-gray-700 mb-1"
                 >Saturated Fat (PC) (g)</label
@@ -347,21 +333,6 @@
                 name="saturated_fat_pc"
                 class="form-input"
                 placeholder="e.g., 2"
-                step="any"
-              />
-            </div>
-            <div>
-              <label
-                for="saturated_fat_pc_dv"
-                class="block text-sm font-medium text-gray-700 mb-1"
-                >Saturated Fat (PC) %DV</label
-              >
-              <input
-                type="number"
-                id="saturated_fat_pc_dv"
-                name="saturated_fat_pc_dv"
-                class="form-input"
-                placeholder="e.g., 10"
                 step="any"
               />
             </div>
@@ -397,21 +368,6 @@
             </div>
             <div>
               <label
-                for="cholesterol_pc_dv"
-                class="block text-sm font-medium text-gray-700 mb-1"
-                >Cholesterol (PC) %DV</label
-              >
-              <input
-                type="number"
-                id="cholesterol_pc_dv"
-                name="cholesterol_pc_dv"
-                class="form-input"
-                placeholder="e.g., 3"
-                step="any"
-              />
-            </div>
-            <div>
-              <label
                 for="sodium_pc"
                 class="block text-sm font-medium text-gray-700 mb-1"
                 >Sodium (PC) (mg)</label
@@ -422,21 +378,6 @@
                 name="sodium_pc"
                 class="form-input"
                 placeholder="e.g., 320"
-                step="any"
-              />
-            </div>
-            <div>
-              <label
-                for="sodium_pc_dv"
-                class="block text-sm font-medium text-gray-700 mb-1"
-                >Sodium (PC) %DV</label
-              >
-              <input
-                type="number"
-                id="sodium_pc_dv"
-                name="sodium_pc_dv"
-                class="form-input"
-                placeholder="e.g., 14"
                 step="any"
               />
             </div>
@@ -457,21 +398,6 @@
             </div>
             <div>
               <label
-                for="total_carbohydrate_pc_dv"
-                class="block text-sm font-medium text-gray-700 mb-1"
-                >Total Carb (PC) %DV</label
-              >
-              <input
-                type="number"
-                id="total_carbohydrate_pc_dv"
-                name="total_carbohydrate_pc_dv"
-                class="form-input"
-                placeholder="e.g., 22"
-                step="any"
-              />
-            </div>
-            <div>
-              <label
                 for="dietary_fiber_pc"
                 class="block text-sm font-medium text-gray-700 mb-1"
                 >Dietary Fiber (PC) (g)</label
@@ -482,21 +408,6 @@
                 name="dietary_fiber_pc"
                 class="form-input"
                 placeholder="e.g., 8"
-                step="any"
-              />
-            </div>
-            <div>
-              <label
-                for="dietary_fiber_pc_dv"
-                class="block text-sm font-medium text-gray-700 mb-1"
-                >Dietary Fiber (PC) %DV</label
-              >
-              <input
-                type="number"
-                id="dietary_fiber_pc_dv"
-                name="dietary_fiber_pc_dv"
-                class="form-input"
-                placeholder="e.g., 29"
                 step="any"
               />
             </div>
@@ -527,21 +438,6 @@
                 name="added_sugars_pc"
                 class="form-input"
                 placeholder="e.g., 20"
-                step="any"
-              />
-            </div>
-            <div>
-              <label
-                for="added_sugars_pc_dv"
-                class="block text-sm font-medium text-gray-700 mb-1"
-                >Added Sugars (PC) %DV</label
-              >
-              <input
-                type="number"
-                id="added_sugars_pc_dv"
-                name="added_sugars_pc_dv"
-                class="form-input"
-                placeholder="e.g., 40"
                 step="any"
               />
             </div>
@@ -633,7 +529,7 @@
 
         <fieldset class="border border-gray-300 p-4 rounded-lg">
           <legend class="text-lg font-semibold text-indigo-600 px-2">
-            Vitamins & Minerals (Per Container)
+            Vitamins & Minerals (Per Container Amounts)
           </legend>
           <p class="info-text mb-4">
             Fill these if 'Servings Per Container (Numeric)' is greater than 1.
@@ -656,21 +552,6 @@
             </div>
             <div>
               <label
-                for="vitamin_d_pc_dv"
-                class="block text-sm font-medium text-gray-700 mb-1"
-                >Vitamin D (PC) %DV</label
-              >
-              <input
-                type="number"
-                id="vitamin_d_pc_dv"
-                name="vitamin_d_pc_dv"
-                class="form-input"
-                placeholder="e.g., 20"
-                step="any"
-              />
-            </div>
-            <div>
-              <label
                 for="calcium_pc"
                 class="block text-sm font-medium text-gray-700 mb-1"
                 >Calcium (PC) (mg)</label
@@ -681,21 +562,6 @@
                 name="calcium_pc"
                 class="form-input"
                 placeholder="e.g., 520"
-                step="any"
-              />
-            </div>
-            <div>
-              <label
-                for="calcium_pc_dv"
-                class="block text-sm font-medium text-gray-700 mb-1"
-                >Calcium (PC) %DV</label
-              >
-              <input
-                type="number"
-                id="calcium_pc_dv"
-                name="calcium_pc_dv"
-                class="form-input"
-                placeholder="e.g., 40"
                 step="any"
               />
             </div>
@@ -716,21 +582,6 @@
             </div>
             <div>
               <label
-                for="iron_pc_dv"
-                class="block text-sm font-medium text-gray-700 mb-1"
-                >Iron (PC) %DV</label
-              >
-              <input
-                type="number"
-                id="iron_pc_dv"
-                name="iron_pc_dv"
-                class="form-input"
-                placeholder="e.g., 9"
-                step="any"
-              />
-            </div>
-            <div>
-              <label
                 for="potassium_pc"
                 class="block text-sm font-medium text-gray-700 mb-1"
                 >Potassium (PC) (mg)</label
@@ -741,21 +592,6 @@
                 name="potassium_pc"
                 class="form-input"
                 placeholder="e.g., 470"
-                step="any"
-              />
-            </div>
-            <div>
-              <label
-                for="potassium_pc_dv"
-                class="block text-sm font-medium text-gray-700 mb-1"
-                >Potassium (PC) %DV</label
-              >
-              <input
-                type="number"
-                id="potassium_pc_dv"
-                name="potassium_pc_dv"
-                class="form-input"
-                placeholder="e.g., 10"
                 step="any"
               />
             </div>
@@ -853,26 +689,29 @@
           for (let [key, value] of formData.entries()) {
             value = typeof value === "string" ? value.trim() : value;
 
+            // Only add to object if value is not empty
+            // OR if the key is 'servings_per_container_number' and it's 0 (as 0 is a valid number)
             if (
               value !== "" ||
               (key === "servings_per_container_number" && value === "0")
             ) {
               const inputElement = form.elements[key];
+              // Check if it's a number input and has a value before trying to parse
               if (
                 inputElement &&
                 inputElement.type === "number" &&
                 value !== ""
               ) {
-                // Ensure value is not empty for number conversion
                 const numValue = parseFloat(value);
+                // Check if conversion was successful and it's a valid number
                 if (!isNaN(numValue)) {
                   nutritionData[key] = numValue;
                 } else {
-                  // If not a valid number but was supposed to be, store as original string if not empty
+                  // If it was supposed to be a number but isn't, store as original string
                   nutritionData[key] = value;
                 }
               } else if (value !== "") {
-                // For non-empty text fields or numbers that were empty
+                // For non-empty text fields or number fields that were left empty
                 nutritionData[key] = value;
               }
             }
@@ -897,6 +736,7 @@
               })
               .catch(err => {
                 console.error("Failed to copy JSON: ", err);
+                // Fallback for older browsers
                 try {
                   const textArea = document.createElement("textarea");
                   textArea.value = jsonOutput.textContent;
